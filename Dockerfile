@@ -5,7 +5,7 @@ RUN apk add -U make git grep
 COPY . .
 RUN make build
 
-FROM alpine:3.20 AS container
+FROM alpine:3.23 AS container
 
 WORKDIR /app
 COPY --from=builder /app/src/idrac_exporter /app/bin/
